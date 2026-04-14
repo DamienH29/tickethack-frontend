@@ -1,31 +1,47 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
     <title>Tickethack</title>
 </head>
+
 <body>
-    <div id="header">
-        <h3 id="title">Tickethack</h2>
-        <h5 class="little-text">Cart</h5>
-        <h5 class="little-text">Bookings</h5>
-    </div>
+
     <div id="container">
-        <h2>Explore the world effortlessly by train!</h1>
-        <h4>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</h3>
-            <div id="search-container">
-                <input type="text" placeholder="Departure" class="input">
-                <input type="text" placeholder="Arrival" class="input">
-                <input type="date" value="" class="input" id="date-input">
-                <button id="search-button">Search</button>
-            </div>
-            <div id="response-container">
-                <img src="./images/train.png" id="train"/>
-                <h4 id="no_trips_text">It's time to book your future trip.</h4>
-            </div>
+
+        <div id="header">
+            <h3 id="title">Tickethack</h2>
+            <h5 class="little-text">Cart</h5>
+            <h5 class="little-text">Bookings</h5>
+        </div>
+
+        <div id="background">
+        <div id="title">
+            <h2>Explore the world effortlessly by train!</h1>
+            <h4>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</h4>
+        </div>
+
+        <div id="search-container">
+            <input type="text" placeholder="Departure" class="input">
+            <input type="text" placeholder="Arrival" class="input">
+            <input type="date" value="" class="input" id="date-input">
+            <button id="search-button">Search</button>
+        </div>
+
+        <div id="response-container">
+            <img src="./images/train.png" id="train"/>
+            <h4 id="no_trips_text">It's time to book your future trip.</h4>
+        </div>
+        </div>
+
     </div>
+
     <script src="script.js" defer></script>
+
 </body>
+
 </html>
