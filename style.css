@@ -41,3 +41,62 @@ body {
     height: 100vh;
     background-size: cover;
 }
+
+#bookings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 50%;             /* Ajuste selon tes besoins */
+    padding: 40px;          /* Espace interne important */
+    border-radius: 10px;    
+}
+
+#background-book {
+    background-color: #EFF2F1;
+    min-height: calc(100vh - 80px);
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bookings {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 25px; /* Espace sous le titre */
+}
+
+#enjoy {
+    color: #469C84;  /* Le vert Tickethack */
+    font-size: 0.8rem;
+    margin-top: 30px; /* Espace au-dessus du message */
+}
+
+#bookings-results {
+    width: 100%;             
+    background-color: #F7F1F1; 
+    border-radius: 5px;      
+    padding: 30px 0;         
+    margin: 20px 0;         
+    
+    display: flex;
+    justify-content: center; /* Centre la ligne à l'intérieur */
+}
+
+.booking-item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 90%;                    
+    padding: 10px 0;             
+    font-size: 0.9rem;
+    color: #333;
+}
+
+#separator {
+    width: 20%;
+    border: none;
+    border-top: 2px solid #030000;
+    margin-top: 40px;    
+    margin-bottom: 5px;
+}
