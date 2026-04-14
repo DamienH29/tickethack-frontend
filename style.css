@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,8 +9,35 @@ body {
 
 #header {
     background-color: white;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 50px;
+}
+
+#title {
+    font-size: 24px;
+    margin: 0;
+    display: flex;
+    color: #459E85;
+}
+
+#cart-booking {
+    display: flex;
+    gap: 20px;
+}
+
+#cart, #bookings {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 #background {
+    margin: 0;
     background-image: url("./images/background.jpg");
+    height: 100vh;
+    background-size: cover;
 }
