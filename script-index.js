@@ -23,7 +23,7 @@ document.querySelector("#search-button").addEventListener("click", function () {
           const newDate = elem.date.slice(11, 16);
 
           document.querySelector("#response-container").innerHTML += `
-                    <div class="trip">
+                    <div class="trip-card">
                         <p class="traject-response">${elem.departure}>${elem.arrival}</p>
                         <p class="hour-response">${newDate}</p>
                         <p class="price-response">${elem.price}€</p>
@@ -32,24 +32,22 @@ document.querySelector("#search-button").addEventListener("click", function () {
             `;
         }
       }
+      addButton();
     })
     .catch((error) => console.error("Erreur:", error));
 });
 
 // Get a trip from the list and add it to the cart list
+function addButton() {
 document.querySelectorAll(".book-button").forEach((button) => {
   button.addEventListener("click", function () {
     const trip = {
-      traject:
-        this.closest(".trip-card").querySelector(".traject-response")
-          .textContent,
-      hour: this.closest(".trip-card").querySelector(".hour-response")
-        .textContent,
-      price:
-        this.closest(".trip-card").querySelector(".price-response").textContent,
+      traject: this.closest(".trip-card").querySelector(".traject-response").textContent,
+      hour: this.closest(".trip-card").querySelector(".hour-response").textContent,
+      price: this.closest(".trip-card").querySelector(".price-response").textContent,
     };
 
-    fetch("http://localhost:3000/cart", {
+    fetch("http://localhost:3000/trips/cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(trip),
@@ -62,34 +60,4 @@ document.querySelectorAll(".book-button").forEach((button) => {
       });
   });
 });
-
-// Add to cart + delete button
-fetch("http://localhost:3000/cart")
-  .then((response) => response.json())
-  .then((data) => {
-    data.trips.forEach((trip) => {
-      document.querySelector("#cart-container").innerHTML += `
-            <div class="trip-card">
-                <p>${trip.traject}</p>
-                <p>${trip.price}</p>
-                <button class="delete-button" id="${trip._id}">X</button>
-            </div>
-        `;
-    });
-    deleteTrip();
-  });
-
-function deleteTrip() {
-  document.querySelectorAll(".delete-button").forEach((button) => {
-    button.addEventListener("click", function () {
-      const id = this.id;
-      fetch(`http://localhost:3000/cart/${id}`, { method: "DELETE" })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.result) {
-            document.querySelector(`#${id}`).parentNode.remove();
-          }
-        });
-    });
-  });
-}
+};
