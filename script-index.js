@@ -24,7 +24,7 @@ document.querySelector("#search-button").addEventListener("click", function () {
 
           document.querySelector("#response-container").innerHTML += `
                     <div class="trip-card">
-                        <p class="traject-response">${elem.departure}>${elem.arrival}</p>
+                        <p class="traject-response">${elem.departure} > ${elem.arrival}</p>
                         <p class="hour-response">${newDate}</p>
                         <p class="price-response">${elem.price}€</p>
                         <button class="book-button">Book</button>
