@@ -176,6 +176,75 @@ body {
   border: #4faa91 solid 1px;
 }
 
+#background-cart {
+  background-color: #eff2f1;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 50%; /* Ajuste selon tes besoins */
+  border-radius: 10px;
+  gap: 20px;
+}
+
+#cart-container p {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#trip-cards {
+  width: 100%;
+}
+
+#footer-cart {
+  background-color: rgb(0, 0, 75);
+  color: white;
+  width: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+#purchase-button {
+  background-color: #5bb299;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #5bb299;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
 #bookings-container {
   display: flex;
   flex-direction: column;
@@ -215,7 +284,7 @@ body {
 
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   font-family:
     system-ui,
     -apple-system,
@@ -228,7 +297,7 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .booking-item {
@@ -250,11 +319,10 @@ body {
 }
 
 .book-button {
-    background-color: #5bb299;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+  background-color: #5bb299;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
-

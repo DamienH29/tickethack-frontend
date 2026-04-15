@@ -18,10 +18,16 @@ fetch("http://localhost:3000/trips/cart")
   .then((response) => response.json())
   .then((data) => {
     if(data.result) {
-    document.querySelector("#cart-container").innerHTML = "";
+    document.querySelector("#cart-container").innerHTML = `
+      <p>My cart</p>
+      <div id="trip-cards"></div>
+      <div id="footer-cart">
+        <p id="cart-total">Total : <span></span>€</p>
+        <button id="purchase-button">Purchase</button>
+      </div>
+    `;
     for(let trip of data.cart) {
-      console.log(trip)
-      document.querySelector("#cart-container").innerHTML += `
+      document.querySelector("#trip-cards").innerHTML += `
             <div class="trip-card">
                 <p>${trip.traject}</p>
                 <p>${trip.hour}</p>
