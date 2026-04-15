@@ -23,7 +23,7 @@ document.querySelector('#search-button').addEventListener('click', function() {
                 const newDate = elem.date.slice(11, 16)
 
                 document.querySelector("#response-container").innerHTML += `
-                    <div>
+                    <div id="bookings-results">
                         <p id="traject-response">${elem.departure}>${elem.arrival}</p>
                         <p id="hour-response">${newDate}</p>
                         <p id="price-response">${elem.price}€</p>
