@@ -1,3 +1,18 @@
+// Click on Tickethack to go there
+document.querySelector("#title").addEventListener("click", function () {
+  window.location.assign("index.html");
+});
+
+// Click on Cart to go there
+document.querySelector("#cart").addEventListener("click", function () {
+  window.location.assign("cart.html");
+});
+
+// Click on Bookings to go there
+document.querySelector("#bookings").addEventListener("click", function () {
+  window.location.assign("bookings.html");
+});
+
 //Add to cart.html + delete button
 fetch("http://localhost:3000/trips/cart")
   .then((response) => response.json())

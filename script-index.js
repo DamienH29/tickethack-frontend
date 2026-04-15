@@ -2,6 +2,21 @@
 const today = new Date().toISOString().split("T")[0];
 document.querySelector("#date-input").value = today;
 
+// Click on Tickethack to go there
+document.querySelector("#title").addEventListener("click", function () {
+  window.location.assign("index.html");
+});
+
+// Click on Cart to go there
+document.querySelector("#cart").addEventListener("click", function () {
+  window.location.assign("cart.html");
+});
+
+// Click on Bookings to go there
+document.querySelector("#bookings").addEventListener("click", function () {
+  window.location.assign("bookings.html");
+});
+
 // Query all trips from DB that match the search inputs and pull them on index.html
 document.querySelector("#search-button").addEventListener("click", function () {
   const departure = document.querySelector("#departure-input").value;
@@ -39,25 +54,30 @@ document.querySelector("#search-button").addEventListener("click", function () {
 
 // Get a trip from the list and add it to the cart list
 function addButton() {
-document.querySelectorAll(".book-button").forEach((button) => {
-  button.addEventListener("click", function () {
-    const trip = {
-      traject: this.closest(".trip-card").querySelector(".traject-response").textContent,
-      hour: this.closest(".trip-card").querySelector(".hour-response").textContent,
-      price: this.closest(".trip-card").querySelector(".price-response").textContent,
-    };
+  document.querySelectorAll(".book-button").forEach((button) => {
+    button.addEventListener("click", function () {
+      const trip = {
+        traject:
+          this.closest(".trip-card").querySelector(".traject-response")
+            .textContent,
+        hour: this.closest(".trip-card").querySelector(".hour-response")
+          .textContent,
+        price:
+          this.closest(".trip-card").querySelector(".price-response")
+            .textContent,
+      };
 
-    fetch("http://localhost:3000/trips/cart", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(trip),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.result) {
-          window.location.assign("cart.html");
-        }
-      });
+      fetch("http://localhost:3000/trips/cart", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(trip),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.result) {
+            window.location.assign("cart.html");
+          }
+        });
+    });
   });
-});
-};
+}
